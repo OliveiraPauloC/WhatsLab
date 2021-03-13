@@ -40,6 +40,7 @@ const NameInput = styled.input`
   color: #ffe3fe;
   border-radius: 10px;
   padding-left: 10px;
+  box-shadow: 2px 2px;
 `
 
 const MessageInput = styled.input`
@@ -51,6 +52,7 @@ const MessageInput = styled.input`
   color: #ffe3fe;
   border-radius: 10px;
   padding-left: 10px;
+  box-shadow: 2px 2px;
 `
 
 const SendButton = styled.button`
@@ -61,6 +63,7 @@ const SendButton = styled.button`
   border-radius: 10px;
   background-color: #ffe3fe;
   color: #93329e;
+  box-shadow: 2px 2px #93329e;
   &:hover {
     background-color: #b4aee8;
     color: #440a67;
