@@ -9,6 +9,8 @@ const AppContainer = styled.div`
   margin: auto;
   display: flex;
   flex-direction: column;
+  background-color: #440a67;
+  
 `
 
 const Messagescontainer = styled.div`
@@ -16,18 +18,53 @@ const Messagescontainer = styled.div`
   padding: 16px;
   display: flex;
   flex-direction: column-reverse;
+  font-size: 18px;
+`
+
+const MessagesWhite = styled.p`
+  color: #ffe3fe;
 `
 
 const InputContainer = styled.div`
   display: flex;
+  height: 7%;
+  margin: 15px;
+  color: #ffe3fe;
 `
 
 const NameInput = styled.input`
-  width: 100px:
+  width: 100px;
+  border: none;
+  font-size: 18px;
+  background-color: #93329e;
+  color: #ffe3fe;
+  border-radius: 10px;
+  padding-left: 10px;
 `
 
 const MessageInput = styled.input`
   flex-grow: 1;
+  border: none;
+  margin-left: 5px;
+  font-size: 18px;
+  background-color: #93329e;
+  color: #ffe3fe;
+  border-radius: 10px;
+  padding-left: 10px;
+`
+
+const SendButton = styled.button`
+  margin-left: 5px;
+  border: none;
+  font-size: 18px;
+  font-weight: bold;
+  border-radius: 10px;
+  background-color: #ffe3fe;
+  color: #93329e;
+  &:hover {
+    background-color: #b4aee8;
+    color: #440a67;
+  }
 `
 
 class App extends React.Component {
@@ -61,9 +98,9 @@ class App extends React.Component {
       <AppContainer>
         <Messagescontainer>
           { this.state.messages.map((message, index) => {
-            return <p key={ index }>
+            return <MessagesWhite key={ index }>
                     <strong>{ message.user }</strong>: { message.text }
-                  </p>
+                  </MessagesWhite>
           }) }
         </Messagescontainer>
         <InputContainer>
@@ -75,9 +112,9 @@ class App extends React.Component {
           <MessageInput 
             onChange={ this.onchangeMessageValue }
             value={ this.state.messageValue }
-            placeholder={ 'mensagem' }
+            placeholder={ 'Mensagem' }
           />
-          <button onClick={ this.sendMessage }>Enviar</button>
+          <SendButton onClick={ this.sendMessage }>Enviar</SendButton>
         </InputContainer>
       </AppContainer>
     )
